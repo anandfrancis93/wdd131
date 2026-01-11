@@ -45,7 +45,7 @@ h1 {
 }
 
 .main-text {
-    text-align: center;
+    text-align: left;
     font-size: 15px;
     line-height: 1.7;
     margin-bottom: 20px;
@@ -57,7 +57,7 @@ h1 {
 }
 
 .italic-text {
-    text-align: center;
+    text-align: left;
     font-style: italic;
     margin: 25px 0;
     font-size: 15px;
