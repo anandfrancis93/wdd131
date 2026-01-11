@@ -42,8 +42,8 @@ h1 {
     letter-spacing: 1px;
     margin-bottom: 35px;
     font-weight: normal;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #4a90d9;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #c0c0c0;
 }
 
 .main-text {
