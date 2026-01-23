@@ -1,7 +1,7 @@
 /* General page styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #e8e8e8;
+    background-color: #ffffff;
     padding: 2rem;
     margin: 0;
 }
@@ -55,6 +55,10 @@ h2 {
 }
 
 #topics h2 {
+    text-align: center;
+}
+
+#topics h2:first-of-type {
     text-align: left;
 }
 
