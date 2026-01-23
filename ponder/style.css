@@ -1,0 +1,58 @@
+/* General page styling to center the card */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* The main content card */
+#content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+/* Image styling */
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+}
+
+/* Heading styles */
+h1 {
+    color: #333;
+    margin-top: 0;
+}
+
+h2 {
+    color: #0056b3;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+    text-align: left;
+}
+
+/* List styling */
+.list {
+    text-align: left;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+#topics {
+    margin-top: 2rem;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 1rem 0;
+}
