@@ -1,18 +1,24 @@
 /* General page styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #d3d3d3;
+    background-color: #e8e8e8;
     padding: 2rem;
     margin: 0;
 }
 
-/* The main content card */
-#content {
-    background-color: #e8e8e8;
-    padding: 3rem 2rem;
-    border: 3px solid #999;
+/* Outer container */
+#outer {
+    background-color: #d3d3d3;
+    padding: 1rem;
     max-width: 700px;
     margin: 0 auto;
+}
+
+/* The main content card */
+#content {
+    background-color: #d3d3d3;
+    padding: 2rem 3rem;
+    border: 1px solid #999;
     text-align: center;
 }
 
@@ -31,34 +37,43 @@ h1 {
 }
 
 h2 {
-    color: #0056b3;
+    color: #000;
     border-bottom: none;
     padding-bottom: 0;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
     margin-top: 1.5rem;
-}
-
-/* List styling */
-.list {
-    text-align: left;
-    line-height: 1.6;
-    margin: 0.5rem 0 1.5rem 2rem;
-    display: inline-block;
+    margin-bottom: 0.5rem;
 }
 
 #topics {
     margin-top: 1rem;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#topics h2 {
+    text-align: left;
+}
+
+#topics p {
+    color: #000;
+    font-size: 0.9rem;
+    margin: 0.3rem 0 1.5rem 0;
+    line-height: 1.5;
+    text-align: left;
 }
 
 hr {
     border: 0;
-    border-top: 2px solid #0056b3;
+    border-top: 3px solid #0056b3;
     margin: 1rem auto;
     width: 60%;
 }
 
-p {
+#content > p {
     color: #0056b3;
     font-size: 0.95rem;
     margin: 0.5rem 0;
