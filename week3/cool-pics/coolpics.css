@@ -1,0 +1,184 @@
+/* Import a nice font */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;500;800&display=swap");
+
+:root {
+    --primary-color: #2a75bb;
+    /* Bright Blue */
+    --secondary-color: #ffffff;
+    --accent-color: #524e4d;
+    --text-dark: #333333;
+    --bg-color: #d3d3d3;
+    /* Light Gray */
+}
+
+body {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    background-color: var(--secondary-color);
+    /* Body white, Main gray? or full gray? Mockup shows gray main area */
+}
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile Menu Button */
+#menu-button {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Nav hidden on mobile */
+nav {
+    margin-top: 1rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+nav a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 0.8rem;
+    width: 100%;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Toggled state */
+.show {
+    display: flex;
+}
+
+/* --- MAIN & GALLERY --- */
+main {
+    padding: 2rem;
+    max-width: 100%;
+    /* Mockup shows full gray background */
+    background-color: var(--bg-color);
+    margin: 0;
+    min-height: 80vh;
+    /* Ensure it fills screen mostly */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+/* Mobile first: single column */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* Or fixed/max width? Mockup shows spacing around */
+    max-width: 300px;
+    /* Keep images manageable on wide screens if single col */
+}
+
+/* RUBRIC REQUIREMENT: Images must be square using object-fit */
+.gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 5px solid var(--secondary-color);
+    /* White border */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    /* Strong shadow */
+    transition: transform 0.3s ease;
+    display: block;
+    /* Remove bottom space */
+}
+
+.gallery img:hover {
+    transform: scale(1.02);
+}
+
+figcaption {
+    display: none;
+    /* Hide caption text as requested/mockup */
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1rem;
+}
+
+/* --- TABLET VIEW (700px and wider) --- */
+@media screen and (min-width: 700px) {
+
+    /* Gallery: 2 columns on tablet */
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* --- DESKTOP VIEW (1000px and wider) --- */
+@media screen and (min-width: 1000px) {
+    header {
+        padding: 1rem 3rem;
+    }
+
+    /* Hide Menu Button on wider screens */
+    #menu-button {
+        display: none;
+    }
+
+    /* Show the nav links on desktop centered below title? Mockup shows centered title, links below. */
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        /* Center ease? Mockup shows links below title */
+        margin-top: 0.5rem;
+    }
+
+    nav a {
+        width: auto;
+        border: none;
+        padding: 0 1rem;
+        font-size: 1rem;
+    }
+
+    /* Gallery: 3 columns on desktop */
+    .gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
