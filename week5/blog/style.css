@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #333;
+    --accent-red: #d32f2f;
+    --accent-orange: #ffcc80;
+    /* Light orange for lines */
+    --accent-gold: #ffb300;
+    /* For stars */
+    --font-serif: 'Lora', serif;
+    --font-sans: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    color: var(--primary-color);
+}
+
+/* Header */
+header {
+    padding: 1rem 2rem;
+    /* border-bottom: 5px solid var(--accent-orange); Removed in favor of nav borders */
+    margin-bottom: 2rem;
+}
+
+.header-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    /* Center title */
+    gap: 1rem;
+}
+
+.site-title {
+    font-family: var(--font-serif);
+    color: #4a2c4a;
+    /* Dark purple/brown from mockup estimate */
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+nav {
+    width: 100%;
+    border-top: 2px solid var(--accent-orange);
+    border-bottom: 2px solid var(--accent-orange);
+    /* Add bottom border */
+    padding: 0.5rem 0;
+    /* Vertical padding */
+    margin-top: 1rem;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* Centered on mobile */
+    gap: 2rem;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Main Layout */
+.grid-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.book-review {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Mobile default */
+    gap: 2rem;
+}
+
+/* Metadata (Left Column on Desktop) */
+.book-metadata {
+    text-align: right;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.meta-item {
+    margin: 0.5rem 0;
+}
+
+.stars {
+    color: var(--accent-gold);
+}
+
+/* Book Content (Right Column on Desktop) */
+.book-content {
+    text-align: center;
+}
+
+.book-title {
+    font-family: var(--font-serif);
+    color: var(--accent-red);
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.book-cover img {
+    max-width: 200px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+.description {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-top: 5px solid var(--accent-orange);
+    font-family: var(--font-serif);
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .header-inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        border-top: 2px solid var(--accent-orange);
+        border-bottom: 2px solid var(--accent-orange);
+        position: static;
+        width: 100%;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0.5rem 0;
+    }
+
+    .nav-list {
+        justify-content: flex-end;
+    }
+
+    .book-review {
+        grid-template-columns: 1fr 3px 3fr;
+        /* Meta | Line | Content */
+        gap: 0;
+        /* Handle gap with padding */
+    }
+
+    .book-metadata {
+        padding-right: 2rem;
+        /* Vertical line created by column 2 or border */
+        border-right: 3px solid var(--accent-orange);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        /* Align with title */
+    }
+
+    /* We can use the border on the metadata element instead of a grid column if strictly 2 cols, 
+       but the mockup shows a distinct line. Let's try simplified grid. */
+
+    .book-review {
+        grid-template-columns: 150px 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .book-metadata {
+        border-right: 2px solid var(--accent-orange);
+        padding-right: 1.5rem;
+        padding-top: 0.5rem;
+        height: 100%;
+        /* Extend line */
+    }
+
+    .book-content {
+        text-align: left;
+        padding-left: 1rem;
+    }
+
+    .book-cover {
+        /* float: left; Removed to stack content */
+        margin-bottom: 1rem;
+    }
+
+    .book-cover img {
+        margin: 0;
+    }
+
+    /* Clearfix for float if needed, or flex/grid inside content */
+    .book-content::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .description {
+        margin: 0;
+        /* Align text to the left */
+        max-width: 100%;
+        /* Allow text to use full column width */
+    }
+}
