@@ -12,7 +12,7 @@ const movies = [
     {
         title: "The Other Side of Heaven",
         date: "December 14, 2001",
-        description: "Based on the true story of Elder John H. Groberg, a missionary in Tonga in the 1950s.",
+        description: "Based on the true story of Elder John H. Groberg, a missionary in Tonga in the 1950s, this film tells a powerful story of faith, hardship, and miracles.",
         imgSrc: "https://wddbyui.github.io/wdd131/images/heaven.png",
         imgAlt: "Poster for The Other Side of Heaven",
         ages: "10+",
@@ -32,7 +32,7 @@ const movies = [
     {
         title: "17 Miracles",
         date: "June 3, 2011",
-        description: "A moving depiction of the Willie Handcart Company's journey west in 1856.",
+        description: "A moving depiction of the Willie Handcart Company's journey west in 1856, focusing on the miraculous events that helped early pioneers survive one of the hardest migrations in history.",
         imgSrc: "https://wddbyui.github.io/wdd131/images/miracles.jpg",
         imgAlt: "Movie poster for 17 Miracles",
         ages: "12+",
@@ -46,13 +46,13 @@ function movieTemplate(movie) {
         <article class="movie-card">
             <img src="${movie.imgSrc}" alt="${movie.imgAlt}" loading="lazy">
             <h2>${movie.title}</h2>
-            <p>${movie.description}</p>
             <div class="details">
-                <p><strong>Released:</strong> ${movie.date}</p>
+                <p><strong>Release Date:</strong> ${movie.date}</p>
+                <p><strong>Recommended Age:</strong> ${movie.ages}</p>
                 <p><strong>Genre:</strong> ${movie.genre}</p>
-                <p><strong>Ages:</strong> ${movie.ages}</p>
                 <p><strong>Rating:</strong> ${movie.stars}</p>
             </div>
+            <p class="movie-description">${movie.description}</p>
         </article>
     `;
 }
