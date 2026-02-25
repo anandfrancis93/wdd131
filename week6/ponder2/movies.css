@@ -50,7 +50,7 @@ footer {
 }
 
 #movie-list {
-    max-width: 550px;
+    max-width: 700px;
     margin: 1.5rem auto;
     display: flex;
     flex-direction: column;
@@ -66,17 +66,19 @@ footer {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     display: grid;
     grid-template-columns: 140px 1fr;
-    grid-template-rows: auto auto;
-    gap: 0 1.2rem;
+    grid-template-rows: auto auto auto;
+    gap: 0.3rem 1.2rem;
 }
 
 .movie-card img {
+    max-width: 100%;
     width: 140px;
     height: auto;
     border-radius: 4px;
-    grid-row: 1 / 2;
+    grid-row: 1 / 4;
     grid-column: 1 / 2;
     object-fit: cover;
+    align-self: start;
 }
 
 .movie-card h2 {
@@ -90,22 +92,74 @@ footer {
 
 .details {
     grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    margin-top: 1.8rem;
+    grid-row: 2 / 3;
     font-size: 0.85rem;
     color: #444;
 }
 
 .details p {
-    margin: 0.4rem 0;
+    margin: 0.3rem 0;
 }
 
 .movie-description {
     grid-column: 1 / -1;
-    grid-row: 2 / 3;
+    grid-row: 4 / 5;
     font-size: 0.85rem;
     line-height: 1.5;
     color: #555;
     margin-top: 0.8rem;
     padding-top: 0.5rem;
+    border-top: 1px solid #eee;
+}
+
+/* Mobile: stack card layout vertically */
+@media (max-width: 500px) {
+    .movie-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        text-align: center;
+    }
+
+    .movie-card img {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        width: 60%;
+        max-width: 200px;
+        margin: 0 auto 0.8rem;
+    }
+
+    .movie-card h2 {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .details {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .movie-description {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+}
+
+/* Wider screens: give cards more room */
+@media (min-width: 768px) {
+    #movie-list {
+        max-width: 800px;
+    }
+
+    .movie-card {
+        grid-template-columns: 180px 1fr;
+        padding: 1.5rem;
+    }
+
+    .movie-card img {
+        width: 180px;
+    }
+
+    .movie-card h2 {
+        font-size: 1.3rem;
+    }
 }
