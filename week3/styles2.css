@@ -1,0 +1,103 @@
+/* ===== Base (mobile) ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #cccccc;
+  color: #222;
+  text-align: center;
+}
+
+header,
+footer {
+  background-color: #3b7fde;
+  color: #ffffff;
+  padding: 0.5rem;
+}
+
+header h1 {
+  margin: 0.5rem 0;
+  font-weight: normal;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Nav links are hidden on mobile for this assignment */
+nav {
+  display: none;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #ffffff;
+}
+
+main h2 {
+  font-weight: normal;
+  font-size: 1.25rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.gallery img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border: 5px solid #ffffff;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+footer p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+/* ===== Tablet ===== */
+@media screen and (min-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Desktop ===== */
+@media screen and (min-width: 1000px) {
+  .menu-btn {
+    display: none;
+  }
+
+  nav {
+    display: block;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
