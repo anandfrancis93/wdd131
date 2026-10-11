@@ -1,0 +1,160 @@
+/* ---------- Base / mobile first ---------- */
+:root {
+  --primary: #4a89dc;      /* header / footer blue */
+  --text-light: #f2f2f2;
+  --text-dark: #222;
+  --page-bg: #d3d3d3;      /* light gray page */
+  --font: "Mooli", Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text-dark);
+  background: var(--page-bg);
+}
+
+header {
+  background: var(--primary);
+  color: var(--text-light);
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 0.75rem;
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-family: var(--font);
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+nav a {
+  color: var(--text-light);
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+
+/* hidden state toggled by JS */
+.hide {
+  display: none;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+main h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 2rem;
+}
+
+.gallery figure {
+  margin: 0;
+  border: 6px solid #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.gallery img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+footer {
+  background: var(--primary);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ---------- Modal ---------- */
+.viewer {
+  border: none;
+  padding: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.viewer::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.viewer img {
+  display: block;
+  max-width: 90vw;
+  max-height: 80vh;
+}
+
+/* white square X sitting just outside the top-right corner of the image */
+.close-viewer {
+  position: absolute;
+  top: -2.5rem;
+  right: -2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  font-family: var(--font);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ---------- Medium screens ---------- */
+@media (min-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Large screens ---------- */
+@media (min-width: 1000px) {
+  .menu-btn {
+    display: none;
+  }
+
+  /* always show links on large screens, even if .hide is set */
+  nav,
+  nav.hide {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
