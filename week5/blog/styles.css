@@ -1,0 +1,151 @@
+:root {
+  --primary: #3b2a3d;      /* dark plum for site title */
+  --accent: #a6102f;       /* crimson for links and book title */
+  --border: #f0c98a;       /* light tan dividers */
+  --text: #1a1a1a;
+  --bg: #ffffff;
+  --heading-font: "Lora", Georgia, serif;
+  --body-font: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.5;
+}
+
+/* Utility: hidden visually, still read by screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Header ---------- */
+header {
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  margin: 0;
+  font-family: var(--heading-font);
+  color: var(--primary);
+  font-size: 1.75rem;
+}
+
+/* ---------- Navigation ---------- */
+nav {
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.25rem;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
+/* ---------- Main / Book (mobile first) ---------- */
+main {
+  padding: 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+
+.book {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.book-details {
+  text-align: right;
+}
+
+.book-details p {
+  margin: 0.4rem 0;
+}
+
+.date {
+  font-style: italic;
+}
+
+.rating {
+  font-size: 0.9rem;
+}
+
+.book-content h2 {
+  font-family: var(--heading-font);
+  color: var(--accent);
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+}
+
+.book-content img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* ---------- Larger devices ---------- */
+@media screen and (min-width: 700px) {
+  main {
+    border-top: none;
+    margin-top: 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .book {
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
+  }
+
+  .book-details {
+    padding: 1rem 1.25rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .book-content {
+    padding: 1rem 1.25rem;
+  }
+
+  footer {
+    border-top-color: #f3c6cf;
+  }
+}
