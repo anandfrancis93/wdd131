@@ -1,0 +1,132 @@
+/* ---------- Variables ---------- */
+:root {
+  --heading-font: 'Lora', Georgia, serif;
+  --body-font: Arial, Helvetica, sans-serif;
+  --title-color: #3b2b3e;
+  --accent-color: #b5122f;
+  --border-color: #ecc77c;
+  --text-color: #000;
+  --bg-color: #fff;
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 0.4rem;
+  font-family: var(--body-font);
+  font-size: 0.9rem;
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+h1,
+h2 {
+  font-family: var(--heading-font);
+}
+
+/* ---------- Header and nav ---------- */
+header h1 {
+  margin: 0;
+  padding: 1rem 0 1.25rem;
+  text-align: center;
+  color: var(--title-color);
+  font-size: 1.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2.5rem;
+  padding: 0.9rem 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Articles ---------- */
+main {
+  padding: 1.75rem 0;
+}
+
+.book {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 3.5rem;
+}
+
+.book-details {
+  padding: 0.75rem 2rem 0 0;
+  text-align: right;
+  border-right: 2px solid var(--border-color);
+}
+
+.book-details p {
+  margin: 0 0 0.9rem;
+}
+
+.date {
+  font-style: italic;
+}
+
+.stars {
+  font-size: 0.7rem;
+}
+
+.book-content {
+  max-width: 590px;
+  padding-left: 2.25rem;
+}
+
+.book-content h2 {
+  margin: 1rem 0 1.25rem;
+  font-size: 1.35rem;
+  color: var(--accent-color);
+}
+
+.book-content img {
+  display: block;
+  width: 222px;
+  height: auto;
+  margin: 0 auto 1.25rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 0.6rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  .book {
+    grid-template-columns: 1fr;
+  }
+
+  .book-details {
+    padding: 0 0 0.75rem;
+    text-align: left;
+    border-right: none;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .book-content {
+    padding: 1rem 0 0;
+  }
+}
