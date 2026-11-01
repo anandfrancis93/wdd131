@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #cfe0cf;
+  color: #222;
+  margin: 0;
+  padding: 20px;
+}
+
+.wrapper {
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+  color: #2b553b;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.field label {
+  font-weight: bold;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+input,
+select,
+button {
+  padding: 0.6rem;
+  font: inherit;
+}
+
+input,
+select {
+  border: 1px solid #777;
+  border-radius: 5px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-width: 0;
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid #2b553b;
+  outline-offset: 3px;
+}
+
+button {
+  background: #cfe0cf;
+  color: #222;
+  border: 1px solid #2b553b;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #dcead9;
+}
+
+.campus-group {
+  min-width: 0;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.campus-group legend {
+  font-weight: bold;
+  padding: 0 0.25rem;
+}
+
+.campus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1rem;
+  margin-top: 0.75rem;
+}
+
+.campus-grid label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.4;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.campus-grid input {
+  flex-shrink: 0;
+  margin: 0.2rem 0 0;
+}
+
+#notesContainer[hidden] {
+  display: none;
+}
+
+#output {
+  margin-top: 1rem;
+  overflow-wrap: anywhere;
+}
+
+#output.error {
+  padding: 15px;
+  color: #8b1720;
+  background: #fff0f0;
+  border: 1px solid #8b1720;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+#output.success {
+  padding: 15px;
+  background: #edf6ed;
+  border: 1px solid #2b553b;
+  border-radius: 8px;
+}
+
+#output h2 {
+  margin-top: 0;
+  color: #2b553b;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+
+  .wrapper {
+    margin: 10px auto;
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  form,
+  .campus-grid {
+    grid-template-columns: 1fr;
+  }
+}
