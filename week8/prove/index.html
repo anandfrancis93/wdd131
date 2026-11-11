@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A character card that uses a JavaScript object with properties and methods to attack and level up a character.">
+  <meta name="author" content="Anand Francis">
+  <title>Character Card | WDD 131</title>
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Character Card | WDD 131">
+  <meta property="og:description" content="A character card that uses a JavaScript object with properties and methods to attack and level up a character.">
+  <meta property="og:url" content="https://githubusername.github.io/wdd131/week8/prove/">
+  <meta property="og:image" content="https://githubusername.github.io/wdd131/week8/prove/snortleblat.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Character Card | WDD 131">
+  <meta name="twitter:description" content="A character card that uses a JavaScript object with properties and methods to attack and level up a character.">
+  <meta name="twitter:image" content="https://githubusername.github.io/wdd131/week8/prove/snortleblat.webp">
+
+  <link rel="stylesheet" href="charactercard.css">
+  <script src="charactercard.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1 class="visually-hidden">Character Card</h1>
+    <section class="card">
+      <img class="image" id="char-image" src="snortleblat.webp" alt="" width="400" height="400">
+      <h2 class="name" id="char-name"></h2>
+      <div class="stats">
+        <p><strong>Class:</strong> <span id="char-class"></span></p>
+        <p><strong>Level:</strong> <span id="char-level"></span></p>
+        <p><strong>Health:</strong> <span id="char-health"></span></p>
+        <p id="char-message" aria-live="polite"></p>
+      </div>
+      <div class="buttons">
+        <button type="button" id="attacked-btn">Attacked</button>
+        <button type="button" id="levelup-btn">Level Up</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
