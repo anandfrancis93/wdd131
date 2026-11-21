@@ -1,0 +1,108 @@
+/* ===== Base styles (from the assignment) ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 20px;
+  max-width: 1280px;
+  margin: auto;
+  padding: 1em;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.main-nav {
+  list-style-type: none;
+}
+
+hr {
+  margin-top: 50px;
+}
+
+/* ===== Mobile first (small screens) ===== */
+
+/* Header: title on top, nav below */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Nav links wrap and center on small screens */
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+}
+
+/* Media card: image stacks above the text */
+.media-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.media-card-image img {
+  width: 100%;
+}
+
+/* Gallery: one card per row */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* ===== Tablet (640px and wider) ===== */
+@media (min-width: 640px) {
+  /* Title on the left, nav on the right */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .main-nav {
+    justify-content: flex-end;
+  }
+
+  /* Media card: image beside the text */
+  .media-card {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .media-card-image,
+  .media-card-content {
+    flex: 1;
+  }
+
+  /* Gallery: two cards per row */
+  .gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .gallery .media-card {
+    flex: 1 1 calc(50% - 50px);
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ===== Desktop (1024px and wider) ===== */
+@media (min-width: 1024px) {
+  /* Gallery: four cards in one row */
+  .gallery .media-card {
+    flex: 1 1 calc(25% - 50px);
+  }
+}
